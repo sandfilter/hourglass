@@ -1,0 +1,4 @@
+/*按钮*/
+.btn{ height:@_80; line-height:@_80; display:inline-block; border:1px solid @main-color; padding: 0 @_24; text-align:center; background-color: @main-color; color:#fff;}
+.btn-large{ width:100%;}
+.btn-disable{ background-color:#eee; color:#999; border:1px solid #ccc; }
