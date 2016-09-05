@@ -1,32 +1,31 @@
 /*网站统一定义部分，如html body fonts定义等*/
-a, img {
-      -webkit-touch-callout: none;
+
+a,img {
+    -webkit-touch-callout: none;
 }
 body {
-      margin: 0;
-          -webkit-user-select: none;
-              user-select: none;
-                  -ms-touch-action: none;
-                      font-family: "Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
-                          -webkit-font-smoothing:antialiased;
-                              -moz-osx-font-smoothing:grayscale
+    margin: 0;
+    -webkit-user-select: none;
+    user-select: none;
+    -ms-touch-action: none;
+    font-family: "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
 }
-html,body{
-      background-color: @main-bg;
-          font-size: @_24;
-              height: 100%; 
-                  width: 100%;
-                      overflow: hidden;
+html,body {
+    background-color: @main-bg;
+    font-size: @_24;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
 }
-
-html,body,a{
-      color: @main-font;
+html,body,a {
+    color: @main-font;
 }
-a{
-      text-decoration: none;
+a {
+    text-decoration: none;
 }
-
-p.line{
-      height: @_30;
-          background-color: #f0f0f0;
+p.line {
+    height: @_30;
+    background-color: #f0f0f0;
 }
