@@ -1,4 +1,3 @@
-/*网站统一定义部分，如html body fonts定义等*/
 
 a,img {
     -webkit-touch-callout: none;
@@ -13,19 +12,19 @@ body {
     -moz-osx-font-smoothing: grayscale
 }
 html,body {
-    background-color: @main-bg;
-    font-size: @_24;
+    background-color: $main-bg;
+    font-size: $_24;
     height: 100%;
     width: 100%;
     overflow: hidden;
 }
 html,body,a {
-    color: @main-font;
+    color: $main-font;
 }
 a {
     text-decoration: none;
 }
 p.line {
-    height: @_30;
+    height: $_30;
     background-color: #f0f0f0;
 }

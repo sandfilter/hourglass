@@ -1,0 +1,51 @@
+#user-index{
+    .info{
+        height: @_230;
+        background: url(../images/user-bg.png);
+        background-size:100% 100%;
+        color: #fff;
+        padding: @_24 @_48;
+        img.user-avatar{
+            width: @_100;
+            height: @_100;
+            border-radius:50%;
+            border: @_4 solid #fff;
+            margin-top: @_37;
+            margin-right: @_24;
+            float: left;
+        }
+        ul{
+            margin-top: @_37;
+            li{
+                font-size:@_26;
+                &:first-child{
+                    font-size: @_44;
+                }
+            }
+        }
+    }
+    ul.base-list{
+        font-size: @_32;
+        > li{
+            height: @_110;
+            line-height: @_110;
+            border-bottom: 1px solid #ccc;
+            a{
+                padding: 0 @_24;
+                display: block;
+            }
+        }
+        .iconfont{
+            font-size: @_30;
+        }
+    }
+    .iconfont.more{
+        float: right;
+        color: #666;
+    }
+    .tel{
+        float: right;
+        margin-right: @_48;
+        color: @main-color;
+    }
+}

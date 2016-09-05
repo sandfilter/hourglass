@@ -1,0 +1,52 @@
+ul.rule{
+    padding: @_12 @_24;
+    >li{
+        color: lighten(@main-font, 30%);
+        font-size: @_24;
+        &:first-child{
+            font-size: @_28;
+            line-height: @_42;
+            color: @main-font;
+        }
+    }
+}
+ul.price {
+    >li{
+        vertical-align: middle;
+        padding: 0 @_24;
+        overflow: auto;
+        line-height: @_80;
+        border-bottom: 1px solid #ccc;
+        >span{
+            float: left;
+            &:last-child{
+                color: @main-color;
+                float: right;
+            }
+            &.green{
+                color: #339900
+            }
+        }
+        &:last-child{
+            border: 0 none;
+        }
+    }
+}
+.auction {
+    >ul{
+        >li{
+            width: 33.3333%;
+            float: left;
+            text-align: center;
+            >a{
+                border: 1px solid #fff;
+                border-radius: @_20;
+                display: inline-block;
+                width: 80%;
+                line-height: @_70;
+                background: #fff;
+                color: @main-color;
+            }
+        }
+    }
+}
