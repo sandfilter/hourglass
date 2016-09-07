@@ -1,21 +1,26 @@
 @charset "UTF-8";
 
 //helpser
-@import "helpers/colors.scss";
+@import "helpers/colors";
+
+//mixin
+@import "mixins";
+
 
 //base
-@import "base/size.scss";
-@import "base/reset.scss";
-@import "base/global.scss";
+@import "base/size";
+@import "base/reset";
+@import "base/global";
 
 //components
-@import "components/icon.scss";
-@import "components/input.scss";
-@import "components/button.scss";
-@import "components/float.scss";
-@import "components/toast.scss";
-@import "components/align.scss";
-
+@import "components/icon";
+@import "components/button";
+@import "components/float";
+//@import "components/input";
+//@import "components/toast";
+//@import "components/align";
+//@import "components/function";
+//@import "components/home-menu";
 
 //layouts
 

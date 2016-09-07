@@ -227,32 +227,19 @@ p.line {
   background-color: #f0f0f0; }
 
 @font-face {
-  font-family: 'iconfont';
-  src: url("//at.alicdn.com/t/font_1469179298_2941992.eot");
-  src: url("//at.alicdn.com/t/font_1469179298_2941992.eot?#iefix") format("embedded-opentype"), url("//at.alicdn.com/t/font_1469179298_2941992.woff") format("woff"), url("//at.alicdn.com/t/font_1469179298_2941992.ttf") format("truetype"), url("//at.alicdn.com/t/font_1469179298_2941992.svg#iconfont") format("svg"); }
+  font-family: "iconfont";
+  src: url("../fonts/iconfont.eot");
+  /* IE9*/
+  src: url("../fonts/iconfont.eot#iefix") format("embedded-opentype"), url("../fonts/iconfont.woff") format("woff"), url("../fonts/iconfont.ttf") format("truetype"), url("../fonts/iconfont.svg#iconfont") format("svg");
+  /* iOS 4.1- */ }
 .iconfont {
   font-family: "iconfont" !important;
   font-style: normal;
   font-size: 120%;
   -webkit-font-smoothing: antialiased;
   -webkit-text-stroke-width: 0.2px;
-  -moz-osx-font-smoothing: grayscale; }
-
-input {
-  padding: 0 0.25rem;
-  width: 100%;
-  height: 2rem;
-  line-height: 2rem;
-  border: 1px solid #ccc;
-  -webkit-appearance: none;
-  border-radius: 0; }
-
-.input-mid {
-  width: 50%; }
-
-.input-error {
-  border: 1px solid #f00;
-  color: #f00; }
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: middle; }
 
 /*botton*/
 .btn {
@@ -269,49 +256,24 @@ input {
   width: 100%; }
 
 .btn-disable {
-  background-color: #eee;
-  color: #999;
+  background-color: #eee !important;
+  color: #999 !important;
+  cursor: not-allowed !important;
   border: 1px solid #ccc; }
 
 /*float*/
 .fl-left {
-  float: left; }
+  float: left;
+  _display: inline; }
 
 .fl-right {
-  float: right; }
+  float: right;
+  _display: inline; }
 
 .txt-right {
   text-align: right; }
 
 .txt-left {
   text-align: left; }
-
-#toast {
-  display: none;
-  position: absolute;
-  z-index: 99;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  text-align: center;
-  opacity: 0; }
-  #toast > span {
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 0.15rem;
-    position: 0.3rem 0.6rem;
-    color: #fff;
-    display: inline-block; }
-
-/*Vertical center*/
-.vertical-wrap {
-  display: table;
-  width: 100%;
-  height: 100%; }
-  .vertical-wrap > .vertical-content {
-    height: 100%;
-    padding-bottom: 4rem;
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center; }
 
 /*# sourceMappingURL=container_s.css.map */

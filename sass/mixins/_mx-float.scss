@@ -1,0 +1,31 @@
+@mixin float($side:left){
+    float: unquote($side);
+    @if $legacy-support-for-ie {
+        _display:inline;
+    }
+}
+
+@mixin pull-left{
+    @include float(left);
+}
+
+%pull-left {
+    @include float(left);
+}
+
+@mixin pull-right{
+    @include float(right);
+}
+
+%pull-right {
+    @include float(right);
+}
+
+@mixin reset-float($display:block){
+    float: none;
+    display: $display;
+}
+
+@mixin txt-align($direction:center){
+    text-align:$direction;
+}

@@ -1,5 +1,5 @@
 /*float*/
-.fl-left{ float: left;}
-.fl-right{ float: right;}
-.txt-right{ text-align: right;}
-.txt-left{ text-align:left;}
+.fl-left{ @include pull-left();}
+.fl-right{ @include pull-right();}
+.txt-right{ @include txt-align(right);}
+.txt-left{ @include txt-align(left);}

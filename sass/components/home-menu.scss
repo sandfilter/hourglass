@@ -1,0 +1,31 @@
+$home-background: #ffad2f;
+.home-menu{ display: inline-block; position: absolute; left: -$_50; bottom: $_120; line-height: $_100; z-index: 99; text-align: center;
+    >ul{
+        >li{ float: left; background-color: rgba($home-background, 70%); width: $_100; height: $_100; text-align: center; display: inline-block; border-radius: 50%; margin-right: $_12; display: none;
+            &:first-child{ display: inline-block;
+                >a>.iconfont{ left: $_50;}
+            }
+            >a{ position: relative; overflow: hidden; width: $_80; height: $_80; display: block; overflow: hidden;}
+        }
+    }
+    .iconfont{ position: absolute; top: 0; left: $_10; font-size: $_60; color: #fff;}
+    /*&.show{ @include Animation(showMenu, .2s); animation-fill-mode: forwards;
+        li{ @include Animation(showMenu3, .2s); animation-fill-mode: forwards; display: inline-block;}
+        .iconfont{ @include Animation(showMenu2, .2s); animation-fill-mode: forwards; }
+    }*/
+}
+
+
+
+@include keyFrames('showMenu'){
+    from{ left: -$_50; }
+    to{ left: $_6;}
+};
+@include keyFrames('showMenu2'){
+    from{ left: -$_50; }
+    to{ left: $_20;}
+};
+@include keyFrames('showMenu3'){
+    from{ background: rgba($home-background, 70%); }
+    to{ background: $home-background; }
+};
