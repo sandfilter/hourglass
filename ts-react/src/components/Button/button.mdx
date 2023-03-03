@@ -1,0 +1,20 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs';
+import Button from "./button";
+
+export const Template = (args) => (
+  <Button {...args}></Button>
+);
+
+# 自定义模板
+
+```js
+const a = 'Vicne';
+```
+
+<h1 className = "title">Button</h1>
+
+<ArgsTable of={Button} />
+<Canvas>
+  <Story id = "button--default"></Story>
+</Canvas>
+<Story id = "button--small"></Story>

@@ -1,0 +1,30 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs';
+import Button from "./components/Button/button";
+
+<Meta title="Testing MDX" component = {Button} />
+
+<style>
+  {`
+    .title { 
+      color: #999;
+    }
+  `}
+</style>
+
+export const Template = (args) => (
+  <Button {...args}></Button>
+);
+
+# 自定义模板
+
+```js
+const a = '123';
+```
+
+<h1 className = "title">Button</h1>
+
+<Canvas>
+  <Story name = "basic Button" args = {{ children : 'default button' }}>
+    { Template.bind( {} ) }
+  </Story>
+</Canvas>

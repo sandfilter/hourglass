@@ -13,18 +13,18 @@ export interface MenuProps {
   onSelect?: SelectCallback;
   children?: React.ReactNode;
   defaultOpenSubMenus?: string[];
-}
+};
 
 interface IMenuContext {
   index?:string;
   onSelect?:SelectCallback;
   mode?:MenuMode;
   defaultOpenSubMenus?: string[];
-}
+};
 
 export const MenuContext = createContext<IMenuContext>({ index: '0' })
 
-const  Menu: React.FC<MenuProps> = (props) => {
+export const Menu: React.FC<MenuProps> = (props) => {
   const {
     children,
     className,
