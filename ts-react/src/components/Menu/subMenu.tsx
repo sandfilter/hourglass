@@ -1,7 +1,13 @@
-import React,{useContext, useState, FunctionComponentElement } from "react";
-import classNames from "classnames"
+import React,{useContext, useState,useRef, FunctionComponentElement } from "react";
+import classNames from "classnames";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { CSSTransition } from "react-transition-group";
 import { MenuContext } from './menu'
 import { MenuItemProps } from './menuItem'
+import Icon from "../icon/icon";
+import Transition from "../Transition/transition";
+library.add( fas );
 
 export interface SubMenuProps {
   index?: string;
@@ -14,22 +20,25 @@ const SubMenu: React.FC<SubMenuProps> = ({index, title, children, className}) =>
   const context = useContext(MenuContext)
   const openSubMenus = context.defaultOpenSubMenus as Array<string>
   const isOpened = (index && context.mode === 'vertical' ) ? openSubMenus.includes(index) : false
-  const [menuOpen, setOpen] = useState(isOpened)
+  const [menuOpen, setOpen] = useState(isOpened);
+  const nodeRef = useRef(null);
   const classes = classNames( 'menu-item submenu-item', className, {
-    'is-active': context.index === index
-  })
+    'is-active': context.index === index,
+    'is-opened': menuOpen,
+    'is-vertical': context.mode === 'vertical',
+  });
   const handleClick = (e: React.MouseEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     setOpen(!menuOpen);
-  }
+  };
   let timer :any
   const handleMouse = (e: React.MouseEvent, toggle:boolean) =>{
-    clearTimeout(timer)
-    e.preventDefault()
+    clearTimeout(timer);
+    e.preventDefault();
     timer = setTimeout(() => {
-      setOpen(toggle)
-    },300)
-  }
+      setOpen(toggle);
+    },300);
+  };
   const clickEvents = context.mode ==='vertical' ? {
     onClick : handleClick
   }: {}
@@ -52,15 +61,23 @@ const SubMenu: React.FC<SubMenuProps> = ({index, title, children, className}) =>
       }
     })
     return (
-      <ul className={subMenuClasses}>
+      <Transition
+        in={menuOpen}
+        timeout={300}
+        animation="zoom-in-bottom"
+        nodeRef={nodeRef} 
+      >
+      <ul className={subMenuClasses} ref={nodeRef}>
         {childrenComponent}
       </ul>
+      </Transition>
     )
   }
   return (
     <li key={index} className={classes} {...hoverEvents}>
       <div className="submenu-title" {...clickEvents}>
         {title}
+        <Icon icon='angle-down' className="arrow-icon" />
       </div>
       {renderChildren()}
     </li>

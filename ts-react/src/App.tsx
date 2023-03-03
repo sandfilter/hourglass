@@ -1,13 +1,23 @@
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 import Button, { ButtonSize, ButtonType }from './components/Button/buttonm';
 import Menu from './components/Menu/menu';
 import MenuItem from './components/Menu/menuItem';
 import SubMenu from './components/Menu/subMenu';
+import Icon from './components/icon/icon';
+import Trensition from './components/Transition/transition';
+import { useState,useRef } from 'react';
+library.add( fas );
 
 function App() {
+const [show, setShow] = useState(false);
+const nodeRef = useRef(null);
+const btnRef = useRef(null);
 return (
 <div className="App">
   <header className="App-header">
-    <Menu defaultIndex={'0'} onSelect = {(index) => { alert(index) }} mode="vertical" defaultOpenSubMenus={['2']}>
+  <Icon icon='star' size="8x" />
+    <Menu defaultIndex={'0'} onSelect = {(index) => { alert(index) }} defaultOpenSubMenus={['2']}>
       <MenuItem>
         cool link
       </MenuItem>
@@ -27,26 +37,46 @@ return (
       </MenuItem>
     </Menu>
 
-    <Button> Hello </Button>
-    <Button disabled> Hello </Button>
-    <Button btnType={ButtonType.Primary} size={ButtonSize.Large}> Hello </Button>
-    <Button btnType={ButtonType.Danger} size={ButtonSize.Smail}> Hello </Button>
-    <Button btnType={ButtonType.Link} href='https://www.google.com'> google link </Button>
-    <Button btnType={ButtonType.Link} href='https://www.baidu.com' disabled> baidu link </Button>
-    <p>
-      Edit <code>src/App.tsx</code> and save to reload.
-    </p>
-    <a
-      className="App-link"
-      href="https://reactjs.org"
-      target="_blank"
-      rel="noopener noreferrer"
+    <Button> Vince </Button>
+    <Button disabled> Vince </Button>
+    <Button btnType={'primary'} size={'lg'}> Vince </Button>
+    <Button btnType={'danger'} size={'sm'}> Vince </Button>
+    <Button btnType={'link'} href='https://www.google.com'> google link </Button>
+    <Button btnType={'link'} href='https://www.baidu.com' disabled> baidu link </Button>
+
+
+
+    <div><Button size='lg' onClick={() => {setShow(!show)}}> Toggle </Button></div>
+    <Trensition 
+      in={show}
+      timeout={300}
+      animation='zoom-in-left'
+      nodeRef={nodeRef} 
     >
-      Learn React
-    </a>
+      <div ref={nodeRef}>
+        <p >
+          Edit <code>src/App.tsx</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a> 
+      </div>
+  </Trensition>
+  <Trensition 
+      in={show}
+      timeout={300}
+      animation='zoom-in-top'
+      // wrapper
+      nodeRef={btnRef} 
+    ><div ref={btnRef}><Button btnType='primary' size='lg'>A large Button</Button></div></Trensition>
   </header>
 </div>
 );
-}
+};
 
 export default App;

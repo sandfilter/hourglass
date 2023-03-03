@@ -8,8 +8,14 @@
 // mixin
 @import './mixin';
 
+// animations
+@import './animation';
+
 // button
 @import '../components/Button/style';
 
 // menu
 @import '../components/Menu/style';
+
+// icon
+@import '../components/icon/style';
